@@ -2,7 +2,7 @@
 
 #### This README.md contains full code for all analyses performed for Aakriti Singh's MS thesis. 
 
-## Versions:
+### Versions:
 FASTQ files downloaded from Globus Connect Personal (version 3.1.6)
 FASTQ files processed through 10X Genomics Cell Ranger Cloud (version 7.0.0) : Single Cell Multiome ATAC and 3' Gene Expression
 filtered.feature.bc.matrix files utilized and analyzed:
@@ -510,7 +510,7 @@ DimPlot(mergedNBG.basal, reduction = "umap", label = "TRUE", pt.size = 0.5)
 DimPlot(mergedNBG.basal, reduction = "umap", pt.size = 0.5, group.by = "orig.ident")
 ```
 
-### Examining total 24 samples from published data (Carerro et. al., 2021)
+## Examining total 24 samples from published data (Carerro et. al., 2021)
 #### Attempt 1
 insert libraries
 ```{r}
@@ -672,7 +672,7 @@ cff_seurat <- FindClusters(cff_seurat, resolution = 0.5)
 DimPlot(cff_seurat, reduction = "umap", group.by = "orig.ident")
 ```
 
-### Batch 1 samples grouped by P0/P1
+## Batch 1 samples grouped by P0/P1
 
 ```{r}
 CF13_P1 <- Read10X_h5("/Users/asingh/Downloads/CF-18-013_P1_filtered_feature_bc_matrix_1.h5", use.names = TRUE, unique.features = TRUE)
@@ -1387,7 +1387,7 @@ FeaturePlot(CFdatafiltered, features = c("KRT6B", "KRT16", "SPRR1", "IVL"), max.
 FeaturePlot(object = CFdatafiltered, features = c("TP63", "KRT5", "NGFR", "KRT8", "ITGA6", "KRT14", "ITGB4", "SCGB1A1", "FOXJ1", "DNAH5", "DNAH11", "PCNT", "MUC5B", "PDPN", "AQP5", "GPRC5A"), max.cutoff = 5)
 ```
 
-### Batch 1 and batch 2 with ScType
+## Batch 1 and batch 2 with ScType
 
 ```{r}
 library(Seurat)
@@ -1913,7 +1913,7 @@ pul2_markers <- FindMarkers(bothbatches, ident.1="Pulmonary alveolar type II cel
 head(pul2 _markers, n = 10)
 ```
 
-### Batch 1 and Batch 2 grouped by passage
+## Batch 1 and Batch 2 grouped by passage
 ---
 combining batch 1 & 2
 seperate by P0/P1/P
@@ -2498,7 +2498,7 @@ FeaturePlot(object = bothbatches, features = c("CFTR"), max.cutoff = 5)
 
 ```
 
-### Batch 1 and batch 2 grouped by CO/CF
+## Batch 1 and batch 2 grouped by CO/CF
 ---
 combining batch 1 & batch 2
 sep CF vs CO
@@ -2972,9 +2972,7 @@ DimPlot(bothbatches)
 DimPlot(bothbatches, reduction = "umap", group.by = "orig.ident")
 ```
 
-### Batch 1 and batch 2, grouped by batch
-
-### Batch 2 alone, filtered
+## Batch 2 alone, filtered
 ---
 batch2 filtered
 ---
@@ -3448,7 +3446,7 @@ FeaturePlot(object = batch2, features = c("TP63", "KRT5", "NGFR", "KRT8", "ITGA6
 FeaturePlot(object = batch2, features = "ASCL3")
 ```
 
-### Batch 1 and batch 2 merged, filtered, grouped by CF/CO
+## Batch 1 and batch 2 merged, filtered, grouped by CF/CO
 
 checking the file 
 ```{r}
@@ -3730,7 +3728,7 @@ DimPlot(CFdatafiltered)
 DimPlot(CFdatafiltered, reduction = "umap", group.by = "orig.ident")
 ```
 
-### Batch 1 unfiltered 
+## Batch 1 unfiltered 
 ---
 title: "MERGED FILES"
 output: html_notebook
@@ -3997,7 +3995,7 @@ CFdata <- FindClusters(CFdata, resolution = 0.3)
 CFdata <- RunUMAP(CFdata, dims = 1:10)
 DimPlot(CFdata, reduction = "umap")
 ```
-### Batch 1 filtered
+## Batch 1 filtered
 ---
 title: "LOOK AT DATASETS INDIVIDUALLY"
 output: html_notebook
@@ -4444,7 +4442,7 @@ CFdatafiltered
 
 
 
-### Both batches merged, grouped by P0.P1
+## Both batches merged, grouped by P0.P1
 ---
 group by P0 vs P1
 ---
@@ -4726,7 +4724,7 @@ DimPlot(CFdatafiltered)
 DimPlot(CFdatafiltered, reduction = "umap", group.by = "orig.ident")
 ```
 
-### Using Azimuth for ATAC data
+## Using Azimuth for ATAC data
 ---
 azimuth pipeline
 ---
@@ -5143,7 +5141,7 @@ p1 + p2 + p3 & NoLegend() & theme(plot.title = element_text(hjust = 0.5))
 p4
 ```
 
-### ATAC WNN analysis
+## ATAC WNN analysis
 ---
 merging objects together -- atac wnn analysis with azimuth
 ---
@@ -5341,7 +5339,7 @@ atacmerged[["RNA"]] <- wnnmerged
 atacmerged[["RNA"]] <- CreateAssayObject(counts = counts$"Gene Expression"[,colnames(atacmerged)])
 ```
 
-### ATAC merged and annotated batch 2
+## ATAC merged and annotated batch 2
 ---
 ATAC MERGED ANNOTATED FILTERED FULL BATCH1
 ---
@@ -5479,7 +5477,7 @@ p4 + p5 + p6
 mergedobject[[]]
 ```
 
-### ATAC merged and annotated batch 1
+## ATAC merged and annotated batch 1
 ---
 ATAC MERGED ANNOTATED FILTERED FULL BATCH1
 ---
@@ -5617,7 +5615,7 @@ p4 + p5 + p6
 mergedobject[[]]
 ```
 
-### WNN analysis 
+## WNN analysis 
 ---
 WNN analysis -- all samples from batch2
 ---
@@ -6570,10 +6568,10 @@ p3 <- DimPlot(sample1b, reduction = "wnn.umap", label = TRUE, label.size = 2.5, 
 p1 + p2 + p3 & NoLegend() & theme(plot.title = element_text(hjust = 0.5))
 ```
 
-### To examine genes in a feature plot
+## To examine genes in a feature plot
 <FeaturePlot(object = bothbatchesrnramy, features = c("KRT5", "KRT14", "KRT15", "TP63", "ITGA6"), max.cutoff = 5)>
 
-### Getting differential markers comparing P5 to P1 
+## Getting differential markers comparing P5 to P1 
 ---
 combining batch 1 & 2
 seperate by P0/P1/P
@@ -7074,7 +7072,7 @@ diffmarkerstxt2 <- FindMarkers(bothbatches, ident.1 = "P5", ident.2 = "P1", min.
 write.csv(diffmarkerstxt2, "diffmarkerstxt2")
 ```
 
-### Patient sample sets
+## Patient sample sets (CF16)
 ---
 title: "R Notebook"
 output: html_notebook
@@ -7148,7 +7146,7 @@ for(j in unique(sctype_scores$cluster)){
 DimPlot(merged_samples, reduction = "umap", label = TRUE, repel = TRUE, group.by = 'customclassif')  
 ```
 
-# Patient sample set (H18)
+## Patient sample set (H18)
 Time points by sample 
 
 ```{r}
@@ -7284,7 +7282,7 @@ DimPlot(merged_samples, reduction = "umap", label = TRUE, repel = TRUE, group.by
 FindMarkers()
 ```
 
-### Filtered, merged ATAC and WNN
+## Filtered, merged ATAC and WNN
 ---
 title: "R Notebook"
 output: html_notebook
@@ -7643,7 +7641,7 @@ p6 <- DimPlot(mergedobject, reduction = "wnn.umap", group.by = "predicted.ann_le
 
 p4 + p5 + p6
 ```
-### Getting differential markers comparing P0 to P1
+## Getting differential markers comparing P0 to P1
 ---
 title: "R Notebook"
 output: html_notebook
