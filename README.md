@@ -17,7 +17,7 @@ filtered.feature.bc.matrix files utilized and analyzed:
  Top differentiall expressed markers manually analyzed using Human Protein Atlas (version 21.1)
  
  
- ### Four supervised clusters: analysis with BG18, BG19, BG20, BG22, BG26
+ ## Four supervised clusters: analysis with BG18, BG19, BG20, BG22, BG26
  
 insert libraries:
 ```{r}
